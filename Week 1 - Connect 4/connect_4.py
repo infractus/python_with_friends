@@ -600,8 +600,10 @@ class Connect4:
 
                 if the_game.tokens_left == 0:
                     the_game.game_over = True
-                    self.the_tournament.draw_count += 1
                     the_game.winner = None
+                    if the_game.is_tournament:
+                        self.the_tournament.draw_count += 1
+                    
             
             if the_game.is_tournament:
                 if the_game.winner:
